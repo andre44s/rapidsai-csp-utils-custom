@@ -23,7 +23,7 @@ except:
                
                   Go to 'Runtime -> Change Runtime Type --> under the Hardware Accelerator, select GPU', then try again."""
   )
-gpu_name = pynvml.nvmlDeviceGetName(pynvml.nvmlDeviceGetHandleByIndex(0))
+gpu_name = pynvml.nvmlDeviceGetName(pynvml.nvmlDeviceGetHandleByIndex(0)).decode('utf-8')
 
 if ('K80' not in gpu_name):
   print('***********************************************************************')
